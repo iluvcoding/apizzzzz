@@ -1,0 +1,20 @@
+<html>
+<head>Download</head>
+<body>
+<!--
+        {%for lis in downloadList %}  
+        <div><a href= "{{url_for('handle_data', filename = lis )}}">{{lis}}</a></div>
+        {% endfor %}
+-->     
+        
+         {%for lis in downloadList %}
+<!--    <p>{{lis.split(".")[1]}}</p>-->
+            {%if lis.split(".")[1] == "json"%}
+                 <div><a name = link href = "{{url_for('handle_data',filename = lis[53:])}}" target = "_blank" download>{{lis[53:]}}</a></div>
+            {%else%}
+                <div><a name = link href = "{{url_for('handle_data',filename = lis[53:])}}" target = "_blank" >{{lis[58:]}}</a></div>
+            {%endif%}
+        {% endfor %} 
+    
+</body>
+</html>
